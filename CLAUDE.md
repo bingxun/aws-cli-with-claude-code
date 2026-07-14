@@ -4,4 +4,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Purpose
 
-This project is a placeholder directory for AWS CLI work assisted by Claude Code. Add project-specific details here as the codebase develops.
+This project is for learning AWS CLI commands assisted by Claude Code. Add project-specific details here as the codebase develops.
