@@ -104,9 +104,9 @@ Hand-drawn approximations were tried and rejected: an inexact version of a regul
 mark looks worse than an honest placeholder and misrepresents the authority's brand. Use
 the official files or the placeholders — nothing in between.
 
-Because the IRAS lockup carries the authority's name in the artwork itself, its badge
-drops the `qual__note` line that the others use, rather than printing the name twice.
-Apply the same treatment to any replacement logo that includes a wordmark.
+The IRAS badge is the mark alone, with no caption beneath it — the lockup already carries
+the authority's name in the artwork. Any replacement logo that includes a wordmark can be
+treated the same way: drop the `qual__body` span and leave `qual__mark`.
 
 ### Adding the official artwork
 
