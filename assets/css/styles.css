@@ -287,14 +287,16 @@ p:last-child { margin-bottom: 0; }
 .qual:hover { background: var(--gold-wash); }
 .qual__mark {
   width: 100%;
-  height: 54px;
+  height: 64px;
   display: grid;
   place-items: center;
 }
-/* Height is pinned rather than max-height: these SVGs carry a viewBox but no
-   intrinsic width, so an auto width inside a shrink-to-fit parent resolves to
-   zero. Fixing the height lets the aspect ratio supply the width. */
-.qual__mark img { height: 54px; width: auto; max-width: 100%; }
+/* Constrained on both axes so wide lockups and portrait ones both fit: a wide
+   mark hits max-width first, a tall one hits max-height. The slot needs its
+   definite width above for this to resolve - marks supplied as SVG carry a
+   viewBox but no intrinsic width, and inside a shrink-to-fit parent that
+   collapses them to zero. */
+.qual__mark img { max-height: 64px; max-width: 100%; }
 .qual__body { display: flex; flex-direction: column; gap: .3rem; }
 .qual__name {
   font-size: .82rem;

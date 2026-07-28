@@ -95,14 +95,18 @@ The "Our qualifications" section sits directly below the hero on the home page, 
 again under *Credentials* on the About page. It carries seven badges: ACRA, ISCA, MOM,
 IMDA, IRAS, QuickBooks and Xero.
 
-**The marks in `assets/img/accreditations/` are placeholders, not the real logos.** Each
-is a plain typographic setting of the body's short name over a simple geometric glyph —
-deliberately *not* a reproduction of anyone's logotype. Those logos are the trademarks of
+**IRAS is real artwork** (`iras-logo-86x94.png`). **The other six are placeholders** —
+a plain typographic setting of each body's short name over a simple geometric glyph,
+deliberately *not* a reproduction of anyone's logotype. These logos are the trademarks of
 the organisations concerned, and displaying them requires permission from each body.
 
 Hand-drawn approximations were tried and rejected: an inexact version of a regulator's
 mark looks worse than an honest placeholder and misrepresents the authority's brand. Use
 the official files or the placeholders — nothing in between.
+
+Because the IRAS lockup carries the authority's name in the artwork itself, its badge
+drops the `qual__note` line that the others use, rather than printing the name twice.
+Apply the same treatment to any replacement logo that includes a wordmark.
 
 ### Adding the official artwork
 
@@ -126,8 +130,9 @@ and `about.html`.
 Only claim an accreditation the firm actually holds — each of these is verifiable on the
 issuing authority's public register, which is exactly why the badges carry weight.
 
-The badge slot is fixed at 54px tall and the width follows each mark's aspect ratio, so
-logos of differing proportions still align on a common baseline.
+The badge slot is 64px tall and constrains marks on both axes — a wide lockup hits
+`max-width` first, a portrait one like the IRAS logo hits `max-height` — so logos of
+differing proportions sit together without any per-logo CSS.
 
 ## Pricing content
 
