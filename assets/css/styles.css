@@ -1,9 +1,14 @@
 /* ==========================================================================
-   Minerva Strategies — global stylesheet
+   Minerva Strategies - global stylesheet
    Palette is derived from the logo: faceted gold compass on ivory.
    ========================================================================== */
 
 :root {
+  /* The brand commits to a single light world: ivory ground, gold compass,
+     navy bands. Pinning color-scheme keeps form controls and scrollbars from
+     being recoloured by a viewer's dark-mode preference. */
+  color-scheme: light;
+
   --gold: #a5853c;
   --gold-light: #c9ac6e;
   --gold-deep: #8a6d2c;
@@ -305,7 +310,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 600;
   letter-spacing: .02em;
 }
-.card__link::after { content: " →"; }
+.card__link::after { content: " \2192"; }
 
 /* value card, numbered */
 .value { position: relative; padding-left: 3.4rem; }
@@ -441,7 +446,7 @@ table.fees .amt small { display: block; font-weight: 400; color: var(--muted); f
 .callout strong { color: var(--ink); }
 .callout ul { margin-top: .7rem; display: grid; gap: .4rem; }
 .callout li { padding-left: 1.1rem; position: relative; }
-.callout li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
+.callout li::before { content: "\2014"; position: absolute; left: 0; color: var(--gold); }
 
 /* ---------- testimonials ---------- */
 .quote {
@@ -479,7 +484,7 @@ table.fees .amt small { display: block; font-weight: 400; color: var(--muted); f
   color: var(--gold);
   transition: transform .2s var(--ease);
 }
-.faq details[open] summary::after { content: "−"; }
+.faq details[open] summary::after { content: "\2212"; }
 .faq details p { padding-bottom: 1.5rem; font-size: .96rem; margin: 0; max-width: 62ch; }
 
 /* ---------- dark CTA band ---------- */

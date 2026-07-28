@@ -1,4 +1,4 @@
-/* Minerva Strategies — site interactions. No dependencies. */
+/* Minerva Strategies - site interactions. No dependencies. */
 (function () {
   'use strict';
 
@@ -79,7 +79,7 @@
       var status = form.querySelector('.form__status');
       if (status) {
         status.textContent =
-          'Thanks — your enquiry has been captured by the demo handler. Connect a form endpoint in assets/js/main.js to receive it by email.';
+          'Thanks \u2014 your enquiry has been captured by the demo handler. Connect a form endpoint in assets/js/main.js to receive it by email.';
         status.classList.add('is-visible', 'is-ok');
       }
       form.reset();
