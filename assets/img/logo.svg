@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" role="img" aria-label="Minerva Strategies">
+  <g transform="translate(220 10) scale(1.0)">
+    <polygon points="100.00,100.00 94.26,86.14 100.00,18.00" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 100.00,18.00 105.74,86.14" fill="#A5853C"/>
+    <polygon points="100.00,100.00 105.74,86.14 136.77,63.23" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 136.77,63.23 113.86,94.26" fill="#A5853C"/>
+    <polygon points="100.00,100.00 113.86,94.26 182.00,100.00" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 182.00,100.00 113.86,105.74" fill="#A5853C"/>
+    <polygon points="100.00,100.00 113.86,105.74 136.77,136.77" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 136.77,136.77 105.74,113.86" fill="#A5853C"/>
+    <polygon points="100.00,100.00 105.74,113.86 100.00,182.00" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 100.00,182.00 94.26,113.86" fill="#A5853C"/>
+    <polygon points="100.00,100.00 94.26,113.86 63.23,136.77" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 63.23,136.77 86.14,105.74" fill="#A5853C"/>
+    <polygon points="100.00,100.00 86.14,105.74 18.00,100.00" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 18.00,100.00 86.14,94.26" fill="#A5853C"/>
+    <polygon points="100.00,100.00 86.14,94.26 63.23,63.23" fill="#C9AC6E"/>
+    <polygon points="100.00,100.00 63.23,63.23 94.26,86.14" fill="#A5853C"/>
+  </g>
+  <text x="320" y="315" text-anchor="middle" fill="#AE8F4C"
+        font-family="'Cormorant Garamond', Garamond, 'Times New Roman', serif"
+        font-size="104" letter-spacing="6">MINERVA</text>
+  <text x="320" y="372" text-anchor="middle" fill="#AE8F4C"
+        font-family="'Cormorant Garamond', Garamond, 'Times New Roman', serif"
+        font-size="34" letter-spacing="13">STRATEGIES</text>
+  <line x1="150" y1="362" x2="252" y2="362" stroke="#AE8F4C" stroke-width="1.5"/>
+  <line x1="388" y1="362" x2="490" y2="362" stroke="#AE8F4C" stroke-width="1.5"/>
+</svg>
