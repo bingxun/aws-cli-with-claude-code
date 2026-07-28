@@ -95,10 +95,18 @@ The "Our qualifications" section sits directly below the hero on the home page, 
 again under *Credentials* on the About page. It carries seven badges: ACRA, ISCA, MOM,
 IMDA, IRAS, QuickBooks and Xero.
 
-**The marks in `assets/img/accreditations/` are placeholders, not the real logos.** Each
-is a plain typographic setting of the body's short name over a simple geometric glyph —
-deliberately *not* a reproduction of anyone's logotype. Those logos are the trademarks of
-the organisations concerned, and reproducing them requires permission from each body.
+**Nothing in `assets/img/accreditations/` is official artwork.** There are two kinds of
+stand-in, and both need replacing:
+
+- `iras.svg` is a **hand-drawn vector recreation** of the IRAS coin mark — the circle,
+  the diagonal white swoosh dividing grey from blue, and the square void. It approximates
+  the real mark's geometry but is not traced from the official file and will not match it
+  exactly. It exists so the row can be previewed in colour; it is not fit to ship.
+- The other six are **typographic placeholders**: the body's short name set over a simple
+  geometric glyph, deliberately *not* a reproduction of anyone's logotype.
+
+These logos are the trademarks of the organisations concerned, and displaying them
+requires permission from each body.
 
 To finish the section:
 
@@ -106,7 +114,9 @@ To finish the section:
    ACRA, ISCA, IMDA and Xero all publish brand or partner guidelines governing use.
 2. Replace each file in `assets/img/accreditations/`, keeping the same filename
    (`acra.svg`, `isca.svg`, `mom.svg`, `imda.svg`, `iras.svg`, `quickbooks.svg`,
-   `xero.svg`). SVG is preferred; PNG works if you set an explicit height.
+   `xero.svg`). SVG is preferred. For a PNG, save it under the same base name and update
+   the one `src` in `index.html` and `about.html` — no CSS change is needed, since the
+   slot sizes on height and the aspect ratio supplies the width.
 3. Fill in your real registration numbers. Two are currently masked placeholders:
    `FA20XXXXXX` for the ACRA filing agent licence and `XXXXXXXX` for the MOM employment
    agency licence. Both appear in `index.html` and `about.html`.
