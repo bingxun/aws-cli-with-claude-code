@@ -258,33 +258,25 @@ p:last-child { margin-bottom: 0; }
    Accreditation badges. The marks in assets/img/accreditations/ are
    placeholders — replace each file with the official artwork you are
    licensed to display, keeping the same filename. */
-/* Flex rather than grid: there are seven badges, so at most column counts the
-   final row is short. Flex items grow to fill it; grid would leave a hole.
-   Separators are leading borders pulled under the container edge by -1px, so
-   the outer border never doubles up. */
+/* Unboxed: no card, no rules, no fill - the badges sit straight on the section
+   ground and spacing alone carries the rhythm. Flex rather than grid because
+   there are seven of them, so the final row is short at most column counts;
+   flex items grow to close it where grid would leave a hole. No hover state,
+   since a badge is not a control. */
 .quals {
   display: flex;
   flex-wrap: wrap;
-  background: var(--bg);
-  border: 1px solid var(--line-soft);
-  border-radius: 6px;
-  overflow: hidden;
+  gap: 2.75rem 1rem;
 }
 .qual {
   flex: 1 1 150px;
-  border-inline-start: 1px solid var(--line-soft);
-  border-block-start: 1px solid var(--line-soft);
-  margin-inline-start: -1px;
-  margin-block-start: -1px;
-  padding: 2rem 1.25rem 1.75rem;
+  padding-inline: .5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .9rem;
-  transition: background .25s var(--ease);
+  gap: 1rem;
 }
-.qual:hover { background: var(--gold-wash); }
 .qual__mark {
   width: 100%;
   height: 64px;
@@ -313,7 +305,7 @@ p:last-child { margin-bottom: 0; }
   text-wrap: balance;
 }
 .quals__footnote {
-  margin-top: 1.5rem;
+  margin-top: 2.75rem;
   font-size: .82rem;
   color: var(--muted);
   text-align: center;
