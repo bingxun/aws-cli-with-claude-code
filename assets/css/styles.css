@@ -254,31 +254,67 @@ p:last-child { margin-bottom: 0; }
   .hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
-/* ---------- trust bar ---------- */
-.trustbar {
-  border-block: 1px solid var(--line-soft);
-  background: var(--bg-alt);
-  padding: 1.6rem 0;
-}
-.trustbar__inner {
+/* ---------- qualifications ----------
+   Accreditation badges. The marks in assets/img/accreditations/ are
+   placeholders — replace each file with the official artwork you are
+   licensed to display, keeping the same filename. */
+/* Flex rather than grid: there are seven badges, so at most column counts the
+   final row is short. Flex items grow to fill it; grid would leave a hole.
+   Separators are leading borders pulled under the container edge by -1px, so
+   the outer border never doubles up. */
+.quals {
   display: flex;
   flex-wrap: wrap;
+  background: var(--bg);
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.qual {
+  flex: 1 1 150px;
+  border-inline-start: 1px solid var(--line-soft);
+  border-block-start: 1px solid var(--line-soft);
+  margin-inline-start: -1px;
+  margin-block-start: -1px;
+  padding: 2rem 1.25rem 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem 2.5rem;
+  gap: .9rem;
+  transition: background .25s var(--ease);
 }
-.trustbar__label {
-  font-size: .72rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
+.qual:hover { background: var(--gold-wash); }
+.qual__mark {
+  width: 100%;
+  height: 54px;
+  display: grid;
+  place-items: center;
 }
-.trustbar__items { display: flex; flex-wrap: wrap; gap: 1.4rem 2.2rem; }
-.trustbar__items li {
-  font-family: var(--serif);
-  font-size: 1.15rem;
+/* Height is pinned rather than max-height: these SVGs carry a viewBox but no
+   intrinsic width, so an auto width inside a shrink-to-fit parent resolves to
+   zero. Fixing the height lets the aspect ratio supply the width. */
+.qual__mark img { height: 54px; width: auto; max-width: 100%; }
+.qual__body { display: flex; flex-direction: column; gap: .3rem; }
+.qual__name {
+  font-size: .82rem;
+  font-weight: 600;
   color: var(--ink);
-  letter-spacing: .04em;
+  letter-spacing: .02em;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.qual__note {
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.45;
+  text-wrap: balance;
+}
+.quals__footnote {
+  margin-top: 1.5rem;
+  font-size: .82rem;
+  color: var(--muted);
+  text-align: center;
 }
 
 /* ---------- stats ---------- */

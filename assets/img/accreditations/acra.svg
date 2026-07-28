@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" role="img" aria-label="ACRA">
+  <title>ACRA - placeholder mark</title>
+  <path d="M120 20 133 33 120 46 107 33Z" fill="#a5853c"/>
+  <text x="120" y="88" text-anchor="middle" fill="#12171f"
+        font-family="'Cormorant Garamond', Garamond, 'Times New Roman', serif"
+        font-size="34" letter-spacing="6">ACRA</text>
+</svg>

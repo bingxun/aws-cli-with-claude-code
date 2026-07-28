@@ -24,6 +24,7 @@ for the restrained professional-services tone, and
 | `assets/js/main.js` | Mobile nav, scroll reveals, pricing category scrollspy, form handler |
 | `assets/img/logo.svg` | Full lockup — compass mark plus wordmark |
 | `assets/img/logo-mark.svg` | Compass mark alone, used in the header, footer and as the favicon |
+| `assets/img/accreditations/` | Seven **placeholder** accreditation marks — see below |
 
 ---
 
@@ -87,6 +88,34 @@ To use the original raster artwork instead, drop it into `assets/img/` and updat
 it scales without artefacts.
 
 ---
+
+## Accreditation badges — action required before publishing
+
+The "Our qualifications" section sits directly below the hero on the home page, and
+again under *Credentials* on the About page. It carries seven badges: ACRA, ISCA, MOM,
+IMDA, IRAS, QuickBooks and Xero.
+
+**The marks in `assets/img/accreditations/` are placeholders, not the real logos.** Each
+is a plain typographic setting of the body's short name over a simple geometric glyph —
+deliberately *not* a reproduction of anyone's logotype. Those logos are the trademarks of
+the organisations concerned, and reproducing them requires permission from each body.
+
+To finish the section:
+
+1. Obtain the official artwork from each organisation, along with permission to display it.
+   ACRA, ISCA, IMDA and Xero all publish brand or partner guidelines governing use.
+2. Replace each file in `assets/img/accreditations/`, keeping the same filename
+   (`acra.svg`, `isca.svg`, `mom.svg`, `imda.svg`, `iras.svg`, `quickbooks.svg`,
+   `xero.svg`). SVG is preferred; PNG works if you set an explicit height.
+3. Fill in your real registration numbers. Two are currently masked placeholders:
+   `FA20XXXXXX` for the ACRA filing agent licence and `XXXXXXXX` for the MOM employment
+   agency licence. Both appear in `index.html` and `about.html`.
+
+Only claim an accreditation the firm actually holds — each of these is verifiable on the
+issuing authority's public register, which is exactly why the badges carry weight.
+
+The badge slot is fixed at 54px tall and the width follows each mark's aspect ratio, so
+logos of differing proportions still align on a common baseline.
 
 ## Pricing content
 

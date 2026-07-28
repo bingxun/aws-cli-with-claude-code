@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" role="img" aria-label="ISCA">
+  <title>ISCA - placeholder mark</title>
+  <circle cx="120" cy="33" r="12" fill="none" stroke="#a5853c" stroke-width="3"/>
+  <text x="120" y="88" text-anchor="middle" fill="#12171f"
+        font-family="'Cormorant Garamond', Garamond, 'Times New Roman', serif"
+        font-size="34" letter-spacing="6">ISCA</text>
+</svg>

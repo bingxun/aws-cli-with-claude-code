@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 100" role="img" aria-label="QB">
+  <title>QB - placeholder mark</title>
+  <rect x="108" y="21" width="24" height="24" fill="none" stroke="#a5853c" stroke-width="3"/>
+  <text x="120" y="88" text-anchor="middle" fill="#12171f"
+        font-family="'Cormorant Garamond', Garamond, 'Times New Roman', serif"
+        font-size="34" letter-spacing="6">QB</text>
+</svg>
