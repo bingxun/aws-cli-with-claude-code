@@ -76,7 +76,7 @@ p:last-child { margin-bottom: 0; }
 .section--tight { padding-block: clamp(3rem, 5vw, 4.5rem); }
 
 .eyebrow {
-  font-size: .74rem;
+  font-size: .78rem;
   letter-spacing: .19em;
   text-transform: uppercase;
   color: var(--gold-deep);
@@ -145,8 +145,8 @@ p:last-child { margin-bottom: 0; }
   color: var(--gold-deep);
 }
 .brand__sub {
-  font-size: .58rem;
-  letter-spacing: .34em;
+  font-size: .64rem;
+  letter-spacing: .32em;
   color: var(--gold);
   margin-top: .28rem;
 }
@@ -427,6 +427,36 @@ table.fees .desc { display: block; font-size: .85rem; color: var(--muted); font-
 table.fees .amt { color: var(--ink); font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
 table.fees .amt small { display: block; font-weight: 400; color: var(--muted); font-size: .78rem; }
 
+/* On a phone the two-column fee table is ~620px wide against a ~350px viewport,
+   so the price column sits off-screen and has to be scrolled to. Below 680px each
+   row becomes a stacked block instead: service, scope note, then the fee. The
+   header row is only a label for columns that no longer exist, so it is hidden
+   visually but left for screen readers. */
+@media (max-width: 680px) {
+  .table-scroll { overflow-x: visible; }
+  table.fees, table.fees tbody, table.fees td { display: block; }
+  table.fees { min-width: 0; }
+  table.fees thead {
+    position: absolute;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0; border: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  table.fees tr {
+    display: grid;
+    gap: .3rem;
+    padding: 1.05rem 1.1rem;
+    border-top: 1px solid var(--line-soft);
+  }
+  table.fees tbody tr:first-child { border-top: 0; }
+  table.fees td { padding: 0; border: 0; }
+  table.fees td:last-child { text-align: left; }
+  table.fees .amt { color: var(--gold-deep); font-size: 1rem; }
+  table.fees .amt small { display: inline; margin-left: .45rem; font-size: .8rem; }
+}
+
 .callout {
   background: var(--gold-wash);
   border-left: 3px solid var(--gold);
@@ -608,4 +638,27 @@ table.fees .amt small { display: block; font-weight: 400; color: var(--muted); f
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* ---------- touch targets ----------
+   Audited at 390px: footer links, breadcrumbs and card links resolved to
+   15-23px tall, well under a comfortable tap. Pointer-coarse rather than a
+   width query, so it follows the input device rather than the screen. */
+@media (pointer: coarse), (max-width: 900px) {
+  .site-footer li { margin-bottom: .15rem; }
+  .site-footer li a,
+  .breadcrumb a,
+  .card__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .fee-nav button { padding: .7rem 1.15rem; }
+  .faq summary { padding-block: 1.5rem; }
+}
+
+/* Long label plus price stops fitting on one line on the narrowest phones. */
+@media (max-width: 420px) {
+  .hero__rates li { flex-wrap: wrap; gap: 0 .75rem; }
+  .hero__rates strong { margin-left: auto; }
 }
