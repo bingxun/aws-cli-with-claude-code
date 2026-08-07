@@ -351,17 +351,6 @@ p:last-child { margin-bottom: 0; }
 }
 .card__link::after { content: " \2192"; }
 
-/* value card, numbered */
-.value { position: relative; padding-left: 3.4rem; }
-.value__num {
-  position: absolute; left: 0; top: .1rem;
-  font-family: var(--serif);
-  font-size: 1.6rem;
-  color: var(--gold-light);
-}
-.value h3 { font-size: 1.15rem; }
-.value p { font-size: .95rem; }
-
 /* ---------- steps ---------- */
 .steps { counter-reset: step; display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .step { position: relative; padding-top: 2.6rem; }
@@ -449,19 +438,6 @@ table.fees .amt small { display: block; font-weight: 400; color: var(--muted); f
 .callout ul { margin-top: .7rem; display: grid; gap: .4rem; }
 .callout li { padding-left: 1.1rem; position: relative; }
 .callout li::before { content: "\2014"; position: absolute; left: 0; color: var(--gold); }
-
-/* ---------- testimonials ---------- */
-.quote {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-  padding: 2rem 1.85rem;
-}
-.quote__mark { font-family: var(--serif); font-size: 3rem; color: var(--gold-light); line-height: .6; display: block; margin-bottom: .8rem; }
-.quote p { font-size: 1rem; color: var(--body); font-style: italic; }
-.quote__by { margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line-soft); font-size: .87rem; }
-.quote__by strong { display: block; color: var(--ink); font-style: normal; }
-.quote__by span { color: var(--muted); }
 
 /* ---------- FAQ ---------- */
 .faq { max-width: 46rem; margin-inline: auto; border-top: 1px solid var(--line); }
