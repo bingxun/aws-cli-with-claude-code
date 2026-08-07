@@ -38,7 +38,12 @@
 
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Clears the sticky header so in-page anchors are not hidden behind it. */
+  scroll-padding-top: 7rem;
+}
 body {
   margin: 0;
   font-family: var(--sans);
@@ -66,7 +71,7 @@ h1 { font-size: clamp(2.6rem, 5.2vw, 4.2rem); }
 h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
 h3 { font-size: 1.35rem; }
 h4 { font-size: 1.1rem; }
-p { margin: 0 0 1.1em; }
+p { margin: 0 0 1.1em; text-wrap: pretty; }
 p:last-child { margin-bottom: 0; }
 
 /* ---------- layout ---------- */
@@ -133,20 +138,20 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   gap: 2rem;
-  min-height: 78px;
+  min-height: 94px;
 }
 .brand { display: flex; align-items: center; gap: .7rem; margin-right: auto; }
-.brand__mark { width: 34px; height: 34px; flex: none; }
+.brand__mark { width: 46px; height: 46px; flex: none; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name {
   font-family: var(--serif);
-  font-size: 1.42rem;
+  font-size: 1.72rem;
   letter-spacing: .1em;
   color: var(--gold-deep);
 }
 .brand__sub {
-  font-size: .64rem;
-  letter-spacing: .32em;
+  font-size: .7rem;
+  letter-spacing: .3em;
   color: var(--gold);
   margin-top: .28rem;
 }
@@ -171,18 +176,11 @@ p:last-child { margin-bottom: 0; }
 .nav a:hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
 .nav a[aria-current="page"] { color: var(--gold-deep); }
 
-.nav-toggle {
-  display: none;
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: .5rem .7rem;
-  color: var(--ink);
-}
-
 @media (max-width: 900px) {
-  .nav-toggle { display: block; }
-  .header-cta { display: none; }
+  /* The CTA lives inside .nav, which is already hidden until the menu opens.
+     Hiding it again here removed the primary action from the mobile menu
+     entirely, so it stays and simply drops to the bottom of the panel. */
+  .header-cta { width: 100%; }
   .nav {
     position: absolute;
     top: 100%; left: 0; right: 0;
@@ -396,7 +394,7 @@ p:last-child { margin-bottom: 0; }
 .fee-nav button:hover { border-color: var(--gold-light); color: var(--ink); }
 .fee-nav button.is-active { background: var(--gold); border-color: var(--gold); color: #fff; }
 
-.fee-block { margin-bottom: 3.5rem; scroll-margin-top: 100px; }
+.fee-block { margin-bottom: 3.5rem; }
 .fee-block > h3 {
   font-size: 1.7rem;
   padding-bottom: .7rem;
@@ -661,4 +659,76 @@ table.fees .amt small { display: block; font-weight: 400; color: var(--muted); f
 @media (max-width: 420px) {
   .hero__rates li { flex-wrap: wrap; gap: 0 .75rem; }
   .hero__rates strong { margin-left: auto; }
+}
+
+/* ---------- brand lockup at small sizes ---------- */
+@media (max-width: 600px) {
+  .site-header__inner { min-height: 78px; }
+  .brand__mark { width: 38px; height: 38px; }
+  .brand__name { font-size: 1.45rem; }
+  .brand__sub { font-size: .62rem; letter-spacing: .28em; }
+}
+
+/* ---------- focus, selection ---------- */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+::selection { background: var(--gold-wash); color: var(--ink); }
+
+/* ---------- menu button ----------
+   A labelled icon rather than the word "Menu"; the bars cross into an X
+   from aria-expanded, so the button's state drives its own appearance. */
+.nav-toggle {
+  width: 46px; height: 46px;
+  display: none;
+  place-items: center;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+@media (max-width: 900px) { .nav-toggle { display: grid; } }
+.nav-toggle__bars { display: block; width: 20px; height: 14px; position: relative; }
+.nav-toggle__bars span {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform .25s var(--ease), opacity .2s var(--ease);
+}
+.nav-toggle__bars span:nth-child(1) { top: 0; }
+.nav-toggle__bars span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.nav-toggle__bars span:nth-child(3) { bottom: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- practice illustration ---------- */
+.split__media svg.practice-icon {
+  width: min(160px, 55%);
+  height: auto;
+  stroke: var(--gold);
+  stroke-width: 1.1;
+  fill: none;
+  opacity: .9;
+}
+
+/* ---------- print ----------
+   Clients print fee schedules. Drop the furniture, keep the tables whole. */
+@media print {
+  .site-header, .site-footer, .band, .nav, .nav-toggle,
+  .skip-link, .hero__actions, .fee-nav, .split__media { display: none !important; }
+  body { font-size: 10.5pt; color: #000; background: #fff; }
+  .section, .section--tight { padding: .75rem 0; }
+  .section--alt, .hero { background: #fff !important; }
+  .wrap { width: 100%; }
+  h1 { font-size: 20pt; } h2 { font-size: 15pt; } h3 { font-size: 12pt; }
+  .fee-block, table.fees tr, .card, .qual { break-inside: avoid; }
+  table.fees { min-width: 0; }
+  table.fees thead th { background: #000 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .table-scroll { border: 1px solid #999; }
+  a { color: #000; text-decoration: underline; }
 }
