@@ -15,13 +15,12 @@ for the restrained professional-services tone, and
 
 | Path | What it is |
 |---|---|
-| `index.html` | Home — hero, value props, service grid, onboarding steps, package pricing, testimonials, FAQ |
+| `index.html` | Home — hero, qualifications, value props, service grid, onboarding steps, **the full itemised fee schedule** (`#fees`), testimonials, FAQ |
 | `services.html` | Six practice areas in detail, each deep-linked (`#incorporation`, `#secretarial`, `#accounting`, `#tax`, `#payroll`, `#advisory`) |
-| `pricing.html` | Three annual packages plus the full itemised fee schedule across seven categories |
 | `about.html` | Firm story, working principles, credentials, statistics |
 | `contact.html` | Quote request form, office details, pre-contact FAQ |
 | `assets/css/styles.css` | The entire stylesheet — design tokens at the top |
-| `assets/js/main.js` | Mobile nav, scroll reveals, pricing category scrollspy, form handler |
+| `assets/js/main.js` | Mobile nav, scroll reveals, fee-category scrollspy, form handler |
 | `assets/img/logo.svg` | Full lockup — compass mark plus wordmark |
 | `assets/img/logo-mark.svg` | Compass mark alone, used in the header, footer and as the favicon |
 | `assets/img/accreditations/` | Seven **placeholder** accreditation marks — see below |
@@ -83,7 +82,7 @@ points at radius 82 and four short intercardinal points at radius 52, each split
 light and a dark facet from the centre.
 
 To use the original raster artwork instead, drop it into `assets/img/` and update the
-`src` in the header and footer `.brand` blocks on all five pages, plus the
+`src` in the header and footer `.brand` blocks on all four pages, plus the
 `<link rel="icon">` in each `<head>`. The SVG is recommended for the favicon regardless —
 it scales without artefacts.
 
@@ -136,28 +135,24 @@ differing proportions sit together without any per-logo CSS.
 
 ## Pricing content
 
-The fee schedule follows Singapore market conventions and is structured the way
-established local firms publish theirs:
+There are **no packages, plans or subscriptions** — every service is priced individually.
+The fee schedule lives on the home page under `#fees` and is structured the way
+established Singapore firms publish theirs: seven categories (incorporation, corporate
+secretarial, accounting, corporate tax, GST, payroll and HR, other services), each a table
+of the service, a short scope note, the fee and its billing basis. Some services are
+inherently recurring — bookkeeping bands, monthly payroll, quarterly GST returns — and
+carry a per-month or per-quarter basis. That is the billing frequency of a single service,
+not a bundle.
 
-- **Three annual packages** — Essential (S$95/mo) for dormant and pre-revenue companies,
-  Growth (S$225/mo) for trading companies, Scale (S$470/mo) for GST-registered companies
-  with staff.
-- **Seven itemised categories** — incorporation, corporate secretarial, accounting,
-  corporate tax, GST, payroll and HR, and other services. Each is a sortable-looking
-  table with the service, a short scope note, the fee and its billing basis.
-
-Figures were set against published 2026 Singapore market rates — corporate secretarial
-retainers cluster between S$300 and S$1,500 a year, with corporate actions such as
-resolutions (S$50–100) and share transfers (S$100–200) billed per event. Regulatory
-thresholds referenced in the copy — the S$1 million GST registration threshold, the 9% GST
-rate, the 17% corporate tax rate, the small-company audit exemption test, and the six-month
-deadline to appoint a company secretary — reflect the rules in force as at July 2026.
+Figures were set against published 2026 Singapore market rates. Regulatory thresholds
+referenced in the copy — the S$1 million GST registration threshold, the 9% GST rate, the
+17% corporate tax rate, the small-company audit exemption test, and the six-month deadline
+to appoint a company secretary — reflect the rules in force as at July 2026.
 
 > **These are sample figures for a fictional firm.** Replace them with your own before
-> publishing. Each page footer and the pricing page callout carry a visible note saying so;
+> publishing. Each page footer and the fee-schedule callout carry a visible note saying so;
 > remove those notes once the numbers are real.
 
----
 
 ## Customising
 
@@ -165,8 +160,8 @@ deadline to appoint a company secretary — reflect the rules in force as at Jul
 each page. Search and replace `Minerva Strategies`, `hello@minervastrategies.sg`,
 `+65 6000 1234` and the `10 Anson Road` address block.
 
-**Prices.** All in `pricing.html`, plus the three package cards echoed on `index.html` —
-update both so they do not drift apart.
+**Prices.** All in the `#fees` section of `index.html`, plus the five headline rates in the
+hero panel — update both so they do not drift apart.
 
 **The contact form.** It currently runs against a demo handler in `assets/js/main.js` that
 shows a confirmation and clears the fields; nothing is sent anywhere. To receive
@@ -198,5 +193,5 @@ attributes are already set.
 ## Browser support
 
 Current versions of Chrome, Firefox, Safari and Edge. `IntersectionObserver` drives the
-scroll reveals and the pricing scrollspy, with a graceful fallback that simply shows all
+scroll reveals and the fee-category scrollspy, with a graceful fallback that simply shows all
 content where it is unavailable.

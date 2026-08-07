@@ -229,9 +229,18 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--shadow-md);
 }
 .hero__panel h3 { font-size: 1.15rem; margin-bottom: .35rem; }
-.hero__panel .price-line { display: flex; align-items: baseline; gap: .4rem; margin: 1rem 0 .25rem; }
-.hero__panel .price-line strong { font-family: var(--serif); font-size: 2.9rem; color: var(--ink); }
-.hero__panel .price-line span { font-size: .9rem; color: var(--muted); }
+.hero__rates { display: grid; gap: .55rem; margin: 1.4rem 0 1.8rem; }
+.hero__rates li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: .93rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.hero__rates li:last-child { border-bottom: 0; padding-bottom: 0; }
+.hero__rates strong { color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
 .checklist { margin: 1.4rem 0; display: grid; gap: .65rem; }
 .checklist li {
   display: flex; gap: .65rem;
@@ -375,43 +384,6 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 560px) { .step::after { display: none; } }
 .step h3 { font-size: 1.15rem; }
 .step p { font-size: .95rem; }
-
-/* ---------- pricing cards ---------- */
-.plans { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: stretch; }
-.plan {
-  background: #fff;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  padding: 2.2rem 1.9rem;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.plan--featured {
-  border-color: var(--gold);
-  box-shadow: var(--shadow-md);
-  position: relative;
-}
-.plan__badge {
-  position: absolute; top: -12px; left: 1.9rem;
-  background: var(--gold);
-  color: #fff;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: .3rem .7rem;
-  border-radius: 2px;
-}
-.plan__name { font-family: var(--serif); font-size: 1.6rem; color: var(--ink); }
-.plan__for { font-size: .87rem; color: var(--muted); margin-top: .2rem; }
-.plan__price { display: flex; align-items: baseline; gap: .35rem; margin: 1.5rem 0 .2rem; }
-.plan__price .cur { font-size: 1rem; color: var(--muted); }
-.plan__price .amt { font-family: var(--serif); font-size: 3.1rem; color: var(--ink); line-height: 1; }
-.plan__price .per { font-size: .88rem; color: var(--muted); }
-.plan__sub { font-size: .82rem; color: var(--muted); }
-.plan .checklist { margin: 1.6rem 0 2rem; }
-.plan .btn { margin-top: auto; }
 
 /* ---------- fee tables ---------- */
 .fee-nav {
